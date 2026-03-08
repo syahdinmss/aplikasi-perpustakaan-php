@@ -26,43 +26,45 @@ rel="stylesheet">
 
 <body class="container mt-5">
 
-<h2>Daftar Buku</h2>
+<?php $no = 1; ?>
 
-<a href="create.php" class="btn btn-primary mb-3">
-Tambah Buku
-</a>
+<a href="create.php" class="btn btn-primary mb-3">+ Tambah Buku</a>
 
-<table class="table table-bordered">
+<table class="table table-bordered table-striped">
 
+<thead class="table-dark">
 <tr>
-<th>ID</th>
+<th>No</th>
 <th>Judul</th>
 <th>Penulis</th>
 <th>Stock</th>
 <th>Aksi</th>
 </tr>
+</thead>
+
+<tbody>
 
 <?php foreach($books as $b): ?>
 
 <tr>
 
-<td><?= $b['id'] ?></td>
+<td><?= $no++ ?></td>
 <td><?= $b['title'] ?></td>
 <td><?= $b['author'] ?></td>
 <td><?= $b['stock'] ?></td>
 
 <td>
 
-<a
-href="edit.php?id=<?= $b['id'] ?>"
-class="btn btn-warning btn-sm">
+<a href="edit.php?id=<?= $b['id'] ?>" class="btn btn-warning btn-sm">
 Edit
 </a>
 
-<a
-href="delete.php?id=<?= $b['id'] ?>"
-class="btn btn-danger btn-sm">
+<a href="delete.php?id=<?= $b['id'] ?>" 
+class="btn btn-danger btn-sm"
+onclick="return confirm('Yakin hapus data?')">
+
 Delete
+
 </a>
 
 </td>
@@ -71,6 +73,7 @@ Delete
 
 <?php endforeach; ?>
 
+</tbody>
 </table>
 
 </body>

@@ -26,14 +26,31 @@ header("Location:index.php");
 
 ?>
 
+<div class="card p-4">
+
+<h4 class="mb-3">Tambah Buku</h4>
+
 <form method="POST">
 
-<input name="title" placeholder="Judul Buku"><br><br>
+<div class="mb-3">
+<label>Judul Buku</label>
+<input type="text" name="title" class="form-control">
+</div>
 
-<input name="author" placeholder="Penulis"><br><br>
+<div class="mb-3">
+<label>Penulis</label>
+<input type="text" name="author" class="form-control">
+</div>
 
-<input name="stock" placeholder="Stock"><br><br>
+<div class="mb-3">
+<label>Stock</label>
+<input type="number" name="stock" class="form-control">
+</div>
 
-<button name="submit">Simpan</button>
+<button class="btn btn-success">Simpan</button>
+
+<a href="index.php" class="btn btn-secondary">Kembali</a>
 
 </form>
+
+</div>
