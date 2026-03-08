@@ -3,10 +3,21 @@ namespace Config;
 
 use mysqli;
 
-class Database {
+class Database
+{
+    private $host = "localhost";
+    private $user = "root";
+    private $pass = "";
+    private $db   = "db_perpustakaan";
 
-    public function connect() {
-        $conn = new mysqli("localhost", "root", "", "db_perpustakaan");
+    public function connect()
+    {
+        $conn = new mysqli(
+            $this->host,
+            $this->user,
+            $this->pass,
+            $this->db
+        );
 
         if ($conn->connect_error) {
             die("Koneksi gagal: " . $conn->connect_error);
